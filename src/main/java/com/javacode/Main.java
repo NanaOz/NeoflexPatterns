@@ -6,6 +6,8 @@ import com.javacode.adapter.MemoryCardAdapter;
 import com.javacode.adapter.USB;
 import com.javacode.factory.Coffee;
 import com.javacode.factory.CoffeeFactory;
+import com.javacode.proxy.Database;
+import com.javacode.proxy.DatabaseProxy;
 import com.javacode.singleton.SingeltonLogger;
 
 public class Main {
@@ -29,5 +31,7 @@ public class Main {
         computer.readUSB(adapter);
 
         //Proxy
+        Database database = new DatabaseProxy("my_db");
+        database.connect();
     }
 }
