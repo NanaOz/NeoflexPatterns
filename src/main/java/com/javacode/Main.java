@@ -1,5 +1,9 @@
 package com.javacode;
 
+import com.javacode.adapter.Computer;
+import com.javacode.adapter.MemoryCard;
+import com.javacode.adapter.MemoryCardAdapter;
+import com.javacode.adapter.USB;
 import com.javacode.factory.Coffee;
 import com.javacode.factory.CoffeeFactory;
 import com.javacode.singleton.SingeltonLogger;
@@ -18,6 +22,11 @@ public class Main {
         americano.prepare();
 
         //Adapter
+        Computer computer = new Computer();
+        MemoryCard memoryCard = new MemoryCard();
+        USB adapter = new MemoryCardAdapter(memoryCard);
+
+        computer.readUSB(adapter);
 
         //Proxy
     }
